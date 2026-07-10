@@ -1,15 +1,15 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { ArrowRight, Play, Code2, Cloud, Cpu, Smartphone, LineChart, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/marketing/Button";
 import { Badge } from "@/components/marketing/Badge";
 import { GradientText } from "@/components/marketing/GradientText";
 import { AnimatedBackground } from "@/components/marketing/AnimatedBackground";
 
-const container = {
+const container: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
 };
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
