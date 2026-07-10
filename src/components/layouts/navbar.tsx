@@ -35,7 +35,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        "fixed inset-x-0 top-0 z-50 overflow-x-hidden transition-all duration-300",
         showBg && "backdrop-blur-lg shadow-[0_10px_30px_rgba(0,0,0,0.25)]",
         showBg
           ? scrolled

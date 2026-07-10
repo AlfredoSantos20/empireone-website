@@ -84,6 +84,8 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
   }
   * {
     border-color: var(--color-border);

@@ -4,7 +4,7 @@ import { Navbar } from "@/components/layouts/navbar";
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="flex min-h-screen flex-col" suppressHydrationWarning>
+    <div className="flex min-h-screen flex-col overflow-x-hidden" suppressHydrationWarning>
       <Navbar />
       <main className="flex-1">{children}</main>
       <Footer />
