@@ -17,7 +17,7 @@ export function Testimonials() {
   const t = TESTIMONIALS[i];
 
   return (
-    <section className="relative py-24 sm:py-32">
+    <section className="relative py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="Loved by teams"
@@ -28,7 +28,7 @@ export function Testimonials() {
           }
         />
 
-        <div className="relative mx-auto mt-14 max-w-3xl">
+        <div className="relative mx-auto mt-8 max-w-3xl">
           <div className="glass rounded-3xl p-10 sm:p-12">
             <Quote className="h-8 w-8 text-primary" />
             <AnimatePresence mode="wait">

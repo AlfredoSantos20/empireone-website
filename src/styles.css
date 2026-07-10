@@ -70,7 +70,9 @@
   --ring: #ff7a18;
 
   --gradient-primary: linear-gradient(135deg, #ff7a18 0%, #ffb347 100%);
+  --gradient-button: linear-gradient(135deg, #ff7a18 0%, #ffb347 100%);
   --shadow-glow: 0 10px 40px -10px rgba(255, 122, 24, 0.45);
+  --shadow-soft: 0 4px 24px -8px rgba(255, 122, 24, 0.18);
   --shadow-elegant: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
 }
 
@@ -89,6 +91,9 @@
   ::selection {
     background: rgba(255, 122, 24, 0.35);
     color: #fff;
+  }
+  section[id] {
+    scroll-margin-top: 5.5rem;
   }
 }
 
@@ -135,4 +140,26 @@
 }
 @utility animate-marquee {
   animation: marquee 30s linear infinite;
+}
+
+@layer utilities {
+  .bg-gradient-button {
+    background: var(--gradient-button);
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .container-px {
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) {
+    .container-px {
+      padding-inline: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container-px {
+      padding-inline: 2rem;
+    }
+  }
 }

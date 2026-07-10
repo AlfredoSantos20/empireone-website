@@ -1,44 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { SiteLayout } from "@/components/layouts/site-layout";
 import { Hero } from "@/components/sections/Hero";
 import { Clients } from "@/components/sections/Clients";
 import { About } from "@/components/sections/About";
-import { Services } from "@/components/sections/Services";
 import { Process } from "@/components/sections/Process";
-import { Technologies } from "@/components/sections/Technologies";
-import { Portfolio } from "@/components/sections/Portfolio";
-import { Statistics } from "@/components/sections/Statistics";
+import { Services } from "@/components/sections/Services";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { Statistics } from "@/components/sections/Statistics";
+import { Portfolio } from "@/components/sections/Portfolio";
+import { Technologies } from "@/components/sections/Technologies";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { Pricing } from "@/components/sections/Pricing";
-import { CTA } from "@/components/sections/CTA";
 import { Contact } from "@/components/sections/Contact";
+import { CTA } from "@/components/sections/CTA";
 
 export const Route = createFileRoute("/")({
-  component: HomePage,
+  head: () => ({
+    links: [{ rel: "canonical", href: "/" }],
+  }),
+  component: Index,
 });
 
-function HomePage() {
+function Index() {
   return (
-    <div className="relative min-h-screen bg-background text-foreground">
-      <Navbar />
-      <main>
-        <Hero />
-        <Clients />
-        <About />
-        <Services />
-        <Process />
-        <Technologies />
-        <Portfolio />
-        <Statistics />
-        <WhyChooseUs />
-        <Testimonials />
-        <Pricing />
-        <CTA />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <SiteLayout>
+      <Hero />
+      <Clients />
+      <About />
+      <Process />
+      <Services />
+      <WhyChooseUs />
+      <Statistics />
+      <Portfolio />
+      <Technologies />
+      {/* <Testimonials /> */}
+      <Contact />
+      <CTA />
+    </SiteLayout>
   );
 }

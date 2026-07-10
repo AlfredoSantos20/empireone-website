@@ -3,9 +3,11 @@ import { SERVICES } from "@/constants/site";
 import { SectionTitle } from "@/components/marketing/SectionTitle";
 import { GradientText } from "@/components/marketing/GradientText";
 
-export function Services() {
+export function Services({ limit }: { limit?: number }) {
+  const items = limit ? SERVICES.slice(0, limit) : SERVICES;
+
   return (
-    <section id="services" className="relative py-24 sm:py-32">
+    <section id="services" className="relative py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="What we do"
@@ -17,8 +19,8 @@ export function Services() {
           description="Ten disciplines. One integrated team. Every capability you need to design, build, ship and scale."
         />
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((s, i) => (
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((s, i) => (
             <motion.article
               key={s.title}
               initial={{ opacity: 0, y: 24 }}

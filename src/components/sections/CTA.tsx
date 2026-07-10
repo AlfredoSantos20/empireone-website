@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/marketing/Button";
-
 export function CTA() {
   return (
-    <section className="relative py-20">
+    <section className="relative py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -26,12 +25,16 @@ export function CTA() {
               </p>
             </div>
             <div className="flex shrink-0 gap-3">
-              <Button as="a" href="#contact" size="lg">
-                Start a project <ArrowRight className="h-4 w-4" />
-              </Button>
-              <Button as="a" href="#services" size="lg" variant="secondary">
-                Explore services
-              </Button>
+              <a href="#contact">
+                <Button size="lg">
+                  Start a project <ArrowRight className="h-4 w-4" />
+                </Button>
+              </a>
+              <a href="#services">
+                <Button size="lg" variant="secondary">
+                  Explore services
+                </Button>
+              </a>
             </div>
           </div>
         </motion.div>

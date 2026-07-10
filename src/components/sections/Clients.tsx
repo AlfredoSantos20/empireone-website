@@ -3,7 +3,7 @@ import { CLIENTS } from "@/constants/site";
 export function Clients() {
   const doubled = [...CLIENTS, ...CLIENTS];
   return (
-    <section aria-label="Trusted by" className="relative border-y border-border/70 bg-background/60 py-10">
+    <section aria-label="Trusted by" className="relative border-y border-border/70 bg-background/60 py-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <p className="text-center text-xs uppercase tracking-[0.24em] text-muted-foreground">
           Trusted by teams at forward-thinking companies

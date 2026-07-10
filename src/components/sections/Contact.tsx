@@ -6,16 +6,16 @@ import { GradientText } from "@/components/marketing/GradientText";
 import { Button } from "@/components/marketing/Button";
 
 const details = [
-  { icon: Mail, label: "Email", value: "hello@empireone.inc" },
-  { icon: Phone, label: "Phone", value: "+1 (415) 555-0128" },
-  { icon: MapPin, label: "HQ", value: "San Francisco · Remote-first" },
+  { icon: Mail, label: "Email", value: "info@empireone.ph" },
+  { icon: Phone, label: "Phone", value: "12345678" },
+  { icon: MapPin, label: "Location", value: "Philippines" },
 ];
 
 export function Contact() {
   const [sent, setSent] = useState(false);
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32">
+    <section id="contact" className="relative py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="Get in touch"
@@ -27,7 +27,7 @@ export function Contact() {
           description="Share a few details about your project. We'll reply within one business day."
         />
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-5">
+        <div className="mt-8 grid gap-10 lg:grid-cols-5">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -47,12 +47,15 @@ export function Contact() {
               </div>
             ))}
             <div className="relative overflow-hidden rounded-2xl border border-border bg-card/40">
-              <div className="aspect-[4/3] w-full bg-[linear-gradient(135deg,#1a1a1f_25%,#0f0f14_25%,#0f0f14_50%,#1a1a1f_50%,#1a1a1f_75%,#0f0f14_75%,#0f0f14_100%)] bg-[length:24px_24px] opacity-70">
-                <div className="grid h-full place-items-center">
-                  <div className="glass rounded-2xl px-4 py-3 text-sm text-muted-foreground">
-                    <MapPin className="mr-2 inline h-4 w-4 text-primary" /> Interactive map coming soon
-                  </div>
-                </div>
+              <div className="aspect-4/3 w-full">
+                <iframe
+                  title="EmpireOne location on Google Maps"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51560116.771685906!2d114.512439!3d12.879721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a35b1910656e29%3A0x47bcc8c7e71f31a1!2sPhilippines!4v1735689600000!5m1!1e4"
+                  className="h-full w-full border-0"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
           </motion.div>
@@ -70,17 +73,17 @@ export function Contact() {
             className="glass grid gap-4 rounded-3xl p-6 sm:p-8 lg:col-span-3"
           >
             <div className="grid gap-4 sm:grid-cols-2">
-              <Field label="Full name" name="name" placeholder="Ada Lovelace" />
-              <Field label="Email" name="email" type="email" placeholder="ada@company.com" />
+              <Field label="Full name" name="name" placeholder="Fullname" />
+              <Field label="Email" name="email" type="email" placeholder="email@example.com" />
             </div>
-            <Field label="Company" name="company" placeholder="Acme Inc." />
+            <Field label="Company" name="company" placeholder="Company name" />
             <div className="grid gap-2">
               <label className="text-xs uppercase tracking-widest text-muted-foreground">Project details</label>
               <textarea
                 required
                 rows={5}
                 placeholder="Tell us about your goals, timeline and budget…"
-                className="w-full resize-none rounded-xl border border-border bg-white/[0.03] px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
+                className="w-full resize-none rounded-xl border border-border bg-white/3 px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
               />
             </div>
             <div className="flex flex-col items-start justify-between gap-3 pt-2 sm:flex-row sm:items-center">
@@ -120,7 +123,7 @@ function Field({
         type={type}
         required
         placeholder={placeholder}
-        className="w-full rounded-xl border border-border bg-white/[0.03] px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
+        className="w-full rounded-xl border border-border bg-white/3 px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
       />
     </div>
   );

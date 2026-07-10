@@ -1,61 +1,58 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import { PORTFOLIO } from "@/constants/site";
-import { SectionTitle } from "@/components/marketing/SectionTitle";
+import { PORTFOLIO } from "@/constants/site";import { SectionTitle } from "@/components/marketing/SectionTitle";
 import { GradientText } from "@/components/marketing/GradientText";
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="relative py-24 sm:py-32">
+    <section id="portfolio" className="relative py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          eyebrow="Selected work"
+          eyebrow="What we build"
           title={
             <>
-              Products we've engineered <GradientText>from zero to scale</GradientText>
+              Confidential work, <GradientText>proven at scale</GradientText>
             </>
           }
-          description="A glimpse into recent engagements — from fintech dashboards to healthcare platforms."
+          description="Most of our engagements are protected by NDAs. We can't share client names or product details — but we can show the types of websites and applications we deliver."
         />
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {PORTFOLIO.map((p, i) => (
-            <motion.a
-              key={p.title}
-              href="#"
-              initial={{ opacity: 0, y: 30 }}
+            <motion.article
+              key={p.category}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-              whileHover={{ y: -6 }}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card/50 backdrop-blur-xl"
+              transition={{ duration: 0.45, delay: (i % 3) * 0.07 }}
+              whileHover={{ y: -4 }}
+              className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card/30 p-6 backdrop-blur-xl transition-colors hover:border-primary/35"
             >
-              <div className={`relative h-48 overflow-hidden bg-gradient-to-br ${p.accent}`}>
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.08),transparent_60%)]" />
-                <div className="absolute inset-6 rounded-xl border border-white/10 bg-black/40 p-3 backdrop-blur">
-                  <div className="mb-2 flex gap-1">
-                    <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
-                  </div>
-                  <div className="grid grid-cols-3 gap-1.5">
-                    {Array.from({ length: 6 }).map((_, k) => (
-                      <div key={k} className="h-8 rounded bg-white/[0.06]" />
-                    ))}
-                  </div>
-                  <div className="mt-2 h-10 rounded bg-white/[0.06]" />
-                </div>
-              </div>
-              <div className="flex items-start justify-between gap-4 p-6">
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-widest text-gradient">{p.category}</p>
-                  <h3 className="mt-1 text-lg font-semibold">{p.title}</h3>
-                </div>
-                <span className="grid h-10 w-10 place-items-center rounded-full border border-border text-muted-foreground transition-all group-hover:-rotate-45 group-hover:border-primary group-hover:text-foreground">
-                  <ArrowUpRight className="h-4 w-4" />
+              <div
+                className={`pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-gradient-to-br ${p.accent} opacity-50 blur-3xl transition-opacity duration-500 group-hover:opacity-90`}
+              />
+              <div
+                className="pointer-events-none absolute inset-0 opacity-[0.35]"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)",
+                  backgroundSize: "28px 28px",
+                }}
+              />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+
+              <div className="relative">
+                <span className="text-xs font-semibold tabular-nums text-primary/40">
+                  {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
-            </motion.a>
+              <h3 className="relative mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-gradient">
+                {p.category}
+              </h3>
+              <p className="relative mt-3 min-h-[3.25rem] text-sm leading-relaxed text-muted-foreground">
+                {p.scope}
+              </p>
+
+              <div className="relative mt-6 h-px w-full bg-gradient-to-r from-primary/60 to-transparent" />            </motion.article>
           ))}
         </div>
       </div>

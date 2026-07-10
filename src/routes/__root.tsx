@@ -101,7 +101,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/empireone.jpg", type: "image/jpeg" },
+      { rel: "apple-touch-icon", href: "/empireone.jpg" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -117,16 +118,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  // In SSR, render full document. In SPA (client), render a fragment.
+  if (typeof document === "undefined") {
+    return (
+      <html lang="en" className="dark" suppressHydrationWarning>
+        <head>
+          <HeadContent />
+        </head>
+        <body
+          className="bg-background text-foreground antialiased"
+          suppressHydrationWarning
+        >
+          {children}
+          <Scripts />
+        </body>
+      </html>
+    );
+  }
+
   return (
-    <html lang="en" className="dark">
-      <head>
-        <HeadContent />
-      </head>
-      <body className="bg-background text-foreground antialiased">
-        {children}
-        <Scripts />
-      </body>
-    </html>
+    <>
+      <HeadContent />
+      {children}
+    </>
   );
 }
 

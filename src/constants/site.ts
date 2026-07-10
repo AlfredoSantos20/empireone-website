@@ -12,14 +12,23 @@ import {
   Plug,
 } from "lucide-react";
 
+export const COMPANY = {
+  name: "EmpireOne Inc.",
+  short: "EmpireOne",
+  tagline: "Building digital products that transform businesses",
+  established: 2012,
+  email: "info@empireone.ph",
+  phone: "123456",
+  address: "Philippines",
+};
+
 export const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Technologies", href: "#technologies" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
-];
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#services", label: "Services" },
+  { href: "#portfolio", label: "Portfolio" },
+  { href: "#contact", label: "Contact" },
+] as const;
 
 export const CLIENTS = [
   "ACME CORP",
@@ -47,7 +56,7 @@ export const SERVICES: Service[] = [
   { icon: Cloud, title: "Cloud Solutions", description: "AWS, Azure and GCP architectures — resilient, observable and cost-optimized." },
   { icon: Server, title: "DevOps & Infra", description: "CI/CD, Kubernetes and IaC pipelines that ship code with confidence." },
   { icon: ShieldCheck, title: "Cybersecurity", description: "Zero-trust security, threat modeling and continuous compliance." },
-  { icon: Sparkles, title: "AI Solutions", description: "LLM agents, RAG systems and computer vision built for production." },
+  // { icon: Sparkles, title: "AI Solutions", description: "LLM agents, RAG systems and computer vision built for production." },
   { icon: Palette, title: "UI / UX Design", description: "Design systems and product experiences that convert and delight." },
   { icon: Workflow, title: "Business Automation", description: "Streamline operations with intelligent workflows and integrations." },
   { icon: Plug, title: "API Development", description: "Type-safe REST and GraphQL APIs, versioned and documented." },
@@ -65,17 +74,17 @@ export const PROCESS = [
 
 export const TECHNOLOGIES = [
   "React", "Next.js", "Node.js", "Laravel", "NestJS", "TypeScript", "Tailwind",
-  "Flutter", "React Native", "AWS", "Azure", "Docker", "Kubernetes",
+  "Flutter", "React Native", "Docker", "Kubernetes",
   "PostgreSQL", "MySQL", "MongoDB", "Redis",
 ];
 
 export const PORTFOLIO = [
-  { title: "FinLedger Dashboard", category: "FinTech", accent: "from-orange-500/30 to-amber-300/10" },
-  { title: "HealthPulse Mobile", category: "Healthcare", accent: "from-rose-500/30 to-orange-400/10" },
-  { title: "EduSphere LMS", category: "Education", accent: "from-amber-400/30 to-yellow-300/10" },
-  { title: "OrbitCRM Suite", category: "CRM", accent: "from-orange-400/30 to-red-400/10" },
-  { title: "Nexus ERP", category: "Enterprise", accent: "from-orange-500/30 to-pink-400/10" },
-  { title: "Vaultly Payments", category: "FinTech", accent: "from-amber-500/30 to-orange-300/10" },
+  { category: "CMS Websites", scope: "WordPress, headless CMS & content-driven business sites", accent: "from-orange-500/30 to-amber-300/10" },
+  { category: "E-Commerce", scope: "Online stores, checkout flows & product catalog systems", accent: "from-rose-500/30 to-orange-400/10" },
+  { category: "Web Applications", scope: "Custom portals, dashboards & workflow platforms", accent: "from-amber-400/30 to-yellow-300/10" },
+  { category: "Mobile Apps", scope: "iOS, Android & cross-platform apps for web-backed products", accent: "from-orange-400/30 to-red-400/10" },
+  { category: "Admin Dashboards", scope: "Operations panels, analytics views & user management tools", accent: "from-orange-500/30 to-pink-400/10" },
+  { category: "Landing Pages", scope: "High-converting marketing sites, launches & brand pages", accent: "from-amber-500/30 to-orange-300/10" },
 ];
 
 export const STATS = [
